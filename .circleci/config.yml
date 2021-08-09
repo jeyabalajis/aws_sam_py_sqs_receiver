@@ -11,6 +11,8 @@ workflows:
     jobs:
       - aws-serverless/deploy:
           name: deploy-staging
+          docker:
+            - image: circleci/python:3.6.4
           stack-name: staging-stack
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
           template: template.yml
@@ -19,6 +21,8 @@ workflows:
             - deploy-staging
       - aws-serverless/deploy:
           name: deploy-production
+          docker:
+            - image: circleci/python:3.6.4
           requires:
             - test_my_api
           stack-name: production-stack
