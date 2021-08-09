@@ -12,6 +12,7 @@ workflows:
       - aws-serverless/deploy:
           name: deploy-staging
           stack-name: staging-stack
+          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
           template: template.yml
       - test_my_api:
           requires:
