@@ -16,7 +16,7 @@ jobs:
 workflows:
   test_and_deploy:
     jobs:
-      - deploy-staging:
+      - deploy-staging
       - test_my_api:
           requires:
             - deploy-staging
