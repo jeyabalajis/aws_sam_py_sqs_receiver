@@ -21,4 +21,5 @@ workflows:
           requires:
             - test_my_api
           stack-name: production-stack
+          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
           template: template.yml
