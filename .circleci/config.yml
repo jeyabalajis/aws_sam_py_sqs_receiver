@@ -2,6 +2,13 @@ version: 2.1
 orbs:
   aws-serverless: circleci/aws-serverless@1.0.2
 jobs:
+  deploy-staging:
+    docker:
+      - image: circleci/python:3.6
+    executor: aws-serverless/deploy
+    stack-name: staging-stack
+    s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
+    template: template.yml
   test_my_api:
     executor: aws-serverless/default
     steps:
@@ -9,20 +16,12 @@ jobs:
 workflows:
   test_and_deploy:
     jobs:
-      - aws-serverless/deploy:
-          name: deploy-staging
-          docker:
-            - image: circleci/python:3.6.4
-          stack-name: staging-stack
-          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
-          template: template.yml
+      - deploy-staging:
       - test_my_api:
           requires:
             - deploy-staging
       - aws-serverless/deploy:
           name: deploy-production
-          docker:
-            - image: circleci/python:3.6.4
           requires:
             - test_my_api
           stack-name: production-stack
