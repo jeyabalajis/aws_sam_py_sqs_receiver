@@ -14,6 +14,7 @@ workflows:
           stack-name: staging-stack
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
           template: template.yml
+          no-fail-on-empty-changeset: true
       - test_my_api:
           requires:
             - deploy-staging
@@ -24,3 +25,4 @@ workflows:
           stack-name: production-stack
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7
           template: template.yml
+          no-fail-on-empty-changeset: true
