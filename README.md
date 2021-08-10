@@ -20,7 +20,7 @@ The lambda handler simply prints the _body_ of SQS payload
 
 ## Local Invoke
 ```
-sam local invoke --event ./event/event.jsonsam local invoke --event ./event/event.json
+sam local invoke --event ./event/event.json
 ```
 
 You should see the following output in the terminal:
