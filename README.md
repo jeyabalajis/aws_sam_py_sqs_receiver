@@ -12,6 +12,10 @@ The SAM template performs the following:
 
 The lambda handler simply prints the _body_ of SQS payload
 
+# Build Status
+
+[![CircleCI](https://circleci.com/gh/jeyabalajis/aws_sam_py_sqs_receiver/tree/master.svg?style=svg)](https://circleci.com/gh/jeyabalajis/aws_sam_py_sqs_receiver/tree/master)
+
 # Workflow
 
 ## Local Invoke
@@ -32,4 +36,8 @@ Hello from SQS!
 ## Deploy
 
 ```sam deploy```
+
+> Ensure that ```confirm_changeset = false``` under samconfig.toml
+
+> You can also set other default deploy parameters under samconfig.toml
 
