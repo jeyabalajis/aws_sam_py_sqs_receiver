@@ -8,3 +8,5 @@ s3_prefix = "aws-sam-sqs-python"
 region = "ap-south-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
+confirm_changeset = false
+tags = "project=\"aws-sam-sqs-python\" stage=\"production\""
