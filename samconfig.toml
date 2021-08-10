@@ -6,7 +6,6 @@ stack_name = "aws-sam-sqs-python"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-cu9oyxmbebq7"
 s3_prefix = "aws-sam-sqs-python"
 region = "ap-south-1"
-confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
 tags = "project=\"aws-sam-sqs-python\" stage=\"production\""
